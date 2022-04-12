@@ -1,33 +1,46 @@
-import React from 'react';
-import { Route } from "react-router-dom";
-import styled from 'styled-components';
-
-import Header from './Header';
-import BloomHeader from './BloomHeader';
-import Login from './Login';
-
-const App = () => {
-  return (
-    <AppContainer>
-      <BloomHeader/>
-      <Header/>
-      <RouteContainer>
-        <Route exact path="/">
-          <Login/>
-        </Route>          
-      </RouteContainer>
-    </AppContainer>
-  )
-}
-
-export default App;
-
+import React from 'react'
+import { Route } from 'react-router-dom'
+import styled from 'styled-components'
 //Task List
 //1. Create and import PrivateRoute component.
 //2. Create a Route for Login pointing to '/login.'
 //3. Create a PrivateRoute for View component point to '/view.'
 //4. Create a PrivateRoute for Logout component pointing to '/logout.'
 
+// import PrivateRoute from './PrivateRoute'
+import Header from './Header'
+import BloomHeader from './BloomHeader'
+import Login from './Login'
+import View from './View'
+import Logout from './Logout'
+
+const App = () => {
+  return (
+    <AppContainer>
+      <BloomHeader />
+      <Header />
+      <RouteContainer>
+        <Route exact path='/'>
+          <Login />
+        </Route>
+
+        <Route path='/login'>
+          <Login />
+        </Route>
+
+        <Route route='/logout'>
+          <Logout />
+        </Route>
+
+        <Route path='/view'>
+          <View />
+        </Route>
+      </RouteContainer>
+    </AppContainer>
+  )
+}
+
+export default App
 
 const AppContainer = styled.div`
   height: 100%;
