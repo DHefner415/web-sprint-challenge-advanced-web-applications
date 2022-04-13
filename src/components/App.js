@@ -7,7 +7,7 @@ import styled from 'styled-components'
 //3. Create a PrivateRoute for View component point to '/view.'
 //4. Create a PrivateRoute for Logout component pointing to '/logout.'
 
-// import PrivateRoute from './PrivateRoute'
+import PrivateRoute from './PrivateRoute'
 import Header from './Header'
 import BloomHeader from './BloomHeader'
 import Login from './Login'
@@ -32,9 +32,9 @@ const App = () => {
           <Logout />
         </Route>
 
-        <Route path='/view'>
+        <PrivateRoute path='/view'>
           <View />
-        </Route>
+        </PrivateRoute>
       </RouteContainer>
     </AppContainer>
   )
